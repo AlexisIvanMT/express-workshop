@@ -1,6 +1,10 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const { pokemon }= require('./pokedex.json');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 /*
 Verbos http
 GET - obtener recursos
@@ -12,6 +16,10 @@ DELETE -Borrar un recursos
 
 app.get("/", (req, res, next) => {
    return res.status(200).send("Bienvenido al Pokemon"); 
+});
+
+app.post("/pokemon", (req,res, next) => {
+    return res.status(200).send(req.body.name);
 });
 
 //Para extraer solo los datos necesarios
