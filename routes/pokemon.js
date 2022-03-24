@@ -1,6 +1,6 @@
 const express= require('express');
 const pokemon = express.Router();
-const db = require('../config/database')
+const db = require('../config/database');
 
 //const pk = require('../pokedex.json').pokemon;
 //quitamos la llaves no hay varible llamada pk en el json, al final agregamos .pokemon
